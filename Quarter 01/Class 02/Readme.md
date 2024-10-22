@@ -1,6 +1,6 @@
 # GloProg (GloVersity) Class 02
 
-Welcome to the repository for **GloProg (GloVersity) Class 02**, held on **-- / -- / ----**. This class builds upon foundational concepts and dives deeper into API integration, cloud-native environments, and Docker containerization. Whether you're continuing from Class 01 or joining fresh, this class provides crucial skills in deploying and managing applications in the cloud. Let’s continue the journey of learning modern API development and cloud technologies!
+Welcome to the repository for **GloProg (GloVersity) Class 02**, held on **-- / -- / ----**.
 
 ---
 

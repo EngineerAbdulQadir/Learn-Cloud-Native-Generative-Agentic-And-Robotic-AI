@@ -1,0 +1,6 @@
+{
+    "name": "Hello-World Dev Container",
+    "dockerFile": "Dockerfile",
+    "appPort": [8888],
+    "extensions": ["ms-python.python"]
+  }

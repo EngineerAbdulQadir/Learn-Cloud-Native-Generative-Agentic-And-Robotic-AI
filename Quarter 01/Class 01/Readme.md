@@ -1,6 +1,6 @@
 # Class 01 GloProg(GloVersity)
 
-Welcome to the official repository for **GloProg(GLoVersity) Class 01** held on **-- / -- / ----**. This class focused on foundational concepts for developing cloud-native applications and the integration of APIs with cutting-edge technologies like GPTs. Whether you're new to programming or already experienced, this repository will provide guidance through essential topics in API development, cloud technologies, and much more!
+Welcome to the official repository for **GloProg(GLoVersity) Class 01** held on **-- / -- / ----**.
 
 ---
 
