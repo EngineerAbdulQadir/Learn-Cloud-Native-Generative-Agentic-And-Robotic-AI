@@ -90,9 +90,7 @@ print(dir(name))
 A = "Wizard"
 B = "Explains"
 C = A + B
-print(C)  # Output: "WizardExplains"
+print(C)  # Output: "GloProg"
 ```
 
 ---
-
-Feel free to explore the repository, raise issues, or ask questions if you need further assistance! Happy coding! 🎉

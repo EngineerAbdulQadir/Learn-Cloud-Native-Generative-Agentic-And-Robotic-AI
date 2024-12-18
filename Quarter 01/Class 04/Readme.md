@@ -112,5 +112,3 @@ Use VS Code's port forwarding to access the notebook from outside the container 
 ![Dev Container Screenshot](https://github.com/user-attachments/assets/553f96f0-0d69-4101-9383-9feb7d63b482)
 
 ---
-
-Feel free to explore the repository, raise issues, or ask questions if you need further assistance! Happy coding! 🎉

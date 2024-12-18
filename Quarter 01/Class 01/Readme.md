@@ -72,5 +72,3 @@ We walked through installing **Ubuntu** on WSL and writing our first "Hello Worl
 - [Docker Hub - Ubuntu](https://hub.docker.com/_/ubuntu)
 
 ---
-
-Feel free to explore the repository, raise any issues, or ask questions if you need further clarification! Happy coding! 🌱

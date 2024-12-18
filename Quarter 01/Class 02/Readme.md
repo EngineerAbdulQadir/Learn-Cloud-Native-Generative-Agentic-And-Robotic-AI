@@ -114,5 +114,3 @@ Our core programming language for API development and cloud applications.
 - [Python Download](https://www.python.org/downloads/)
 
 ---
-
-Feel free to explore the repository, raise issues, or ask questions if you need further assistance! Happy coding! 🎉

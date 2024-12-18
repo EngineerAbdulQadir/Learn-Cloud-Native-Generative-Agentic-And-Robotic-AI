@@ -70,5 +70,3 @@ docker run hello-world-app
 ```
 
 ---
-
-Feel free to explore the repository, raise issues, or ask questions if you need further assistance! Happy coding! 🎉
