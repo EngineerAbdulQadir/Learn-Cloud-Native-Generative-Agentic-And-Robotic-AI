@@ -1,4 +1,4 @@
-# Start Small, Build Big  
+# Object Oriented Programming 
 Implement OOP concepts step by step with each project, such as:  
 
 - **Abstraction**: Generalizing methods.  
