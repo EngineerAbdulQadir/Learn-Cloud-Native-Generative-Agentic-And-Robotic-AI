@@ -1,6 +1,6 @@
-# GloProg (GloVersity) Class 02
+# GloProg (GloVersity) Class 03
 
-Welcome to the repository for GloProg (GloVersity) Class 02, held on -- / -- / ----.
+Welcome to the repository for GloProg (GloVersity) Class 03, held on -- / -- / ----.
 
 #### **Today’s Agenda:**
 1. **Introduction to the Experimental Gemini 2.0 Flash Model** 🌟
