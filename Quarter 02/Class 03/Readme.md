@@ -18,7 +18,7 @@ Welcome to the repository for GloProg (GloVersity) Class 03, held on -- / -- / -
 [www.github.com/panaversity/learn-agentic-ai](https://www.github.com/panaversity/learn-agentic-ai)
 
 #### **Codes Run in Class Today:**  
-- [**PIAIC Class 03 Batch 61 Q2 Colab File**](https://github.com/wajahattt-dot/PIAIC-Q2-Notes-Wajahat-Hussain/blob/main/Class%2003%20Q2%20Batch%20%2061/PIAIC_Class_03_Q2_B61.ipynb) ☁️
+- [**PIAIC Class 03 Batch 61 Q2 Colab File**](https://github.com/EngineerAbdulQadir/Learn-Cloud-Native-Generative-Agentic-And-Robotic-AI/blob/main/Quarter%2002/Class%2003/Practice.ipynb) ☁️
 
 ### **1. Gemini 2.0 Flash (Experimental)** 🚀
 
