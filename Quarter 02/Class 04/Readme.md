@@ -1,6 +1,5 @@
-# GloProg (GloVersity) Class 03
-
-Welcome to the repository for GloProg (GloVersity) Class 03, held on -- / -- / ----.
+# GloProg (GloVersity) Class 04
+Welcome to the repository for GloProg (GloVersity) Class 04, held on -- / -- / ----.
 
 ## Table of Contents    
 - [Detailed Notes](#detailed-notes-pencil)  
