@@ -144,7 +144,7 @@ flowchart TB
 
 
 
-### 8. The Next Wave of AI: Humanoids, Cloud, Edge & Link Computing
+### 8. The Next Wave of AI: Humanoids, Cloud, Edge & Leave Computing
 
 1. **Humanoid Robotics**  
    - AI + Robotics = Machines with **human-like** structures and capabilities.
@@ -157,7 +157,7 @@ flowchart TB
    - Example: **Self-driving cars** do real-time inference on-board.
 
 4. **Link Computing**  
-   - Distributed approach connecting **cloud, edge, and local** compute resources.
+   - Leave computing ensures that computation is performed locally at the edge of the network
 
 
 
