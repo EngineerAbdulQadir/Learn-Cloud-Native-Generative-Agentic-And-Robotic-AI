@@ -30,6 +30,7 @@ Welcome to the first class of the **Langchain Series**! In this session, we set 
    ```
    openai
    langchain
+   langchain_community
    streamlit
    ```
 2. Install the required packages:
