@@ -1,8 +1,4 @@
-Here’s the updated README for **LangChain Series: Class 2**, with the introduction, features, and notes sections added:
-
----
-
-# LangChain Series: Class 2 - README
+# LangChain Series - Class 02
 
 ## **Introduction**
 
@@ -12,20 +8,13 @@ Welcome to the second class of the LangChain Series! In this session, we build u
 
 ## **Step 1: Creating `practice.py`**
 
-Start by creating a new Python file called `practice.py`. You will use this file to experiment with LangChain concepts.  
-
----
-
-### **Step 2: Building a Celebrity Search Application**
-
-The first task is to use **Prompt Templates** to create a basic celebrity search application.
+Start by creating a new Python file called `practice.py`. This will be where you experiment with LangChain concepts.
 
 ```python
+# practice.py
 import os
 from constants import openai_key
 from langchain.llms import OpenAI
-from langchain import PromptTemplate
-
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = openai_key
@@ -34,7 +23,36 @@ os.environ["OPENAI_API_KEY"] = openai_key
 st.title('Langchain Demo With OPENAI API')
 input_text = st.text_input("Enter Anything You Want To Ask?")
 
-# Prompt Template
+
+# OpenAI LLMs
+llm = OpenAI(temperature=0.8)
+
+if input_text:
+    st.write(chain.run(input_text))
+```
+
+
+---
+
+## **Step 2: Building the Celebrity Search Application**
+
+Now we’ll create a prompt template for searching celebrity details.
+
+```python
+# practice.py (Step 2)
+import os
+from constants import openai_key
+from langchain.llms import OpenAI
+from langchain import PromptTemplate
+import streamlit as st
+
+os.environ["OPENAI_API_KEY"] = openai_key
+
+# Streamlit framework
+st.title('Langchain Demo With OPENAI API')
+input_text = st.text_input("Enter Anything You Want To Ask?")
+
+# Prompt Template for celebrity search
 first_input_prompt = PromptTemplate(
     input_variables=['name'],
     template="Tell me about celebrity {name}"
@@ -48,20 +66,25 @@ if input_text:
     st.write(chain.run(input_text))
 ```
 
+### **Output Section**
+<h4>Asking -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/LZNqd6w/STEP-TWO-1.png" alt="STEP-TWO-1" border="0"></a>
+<h4>Output -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/gZGGt63/STEP-TWO-2.png" alt="STEP-TWO-2" border="0"></a>
+
 ---
 
-### **Step 3: Combining Multiple Prompt Templates**
+## **Step 3: Combining Multiple Prompt Templates**
 
-Now, extend your application to use multiple prompt templates by combining them.
+In this step, we’ll combine two different prompt templates to handle multiple queries.
 
 ```python
+# practice.py (Step 3)
 import os
 from constants import openai_key
 from langchain.llms import OpenAI
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
-from langchain.chains import SimpleSequentialChain
-
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = openai_key
@@ -70,15 +93,16 @@ os.environ["OPENAI_API_KEY"] = openai_key
 st.title('Langchain Demo With OPENAI API')
 input_text = st.text_input("Enter Anything You Want To Ask?")
 
-# Prompt Templates
+# Prompt Template for celebrity search
 first_input_prompt = PromptTemplate(
     input_variables=['name'],
     template="Tell me about celebrity {name}"
 )
 
+# Prompt Template for birth date
 second_input_prompt = PromptTemplate(
     input_variables=['person'],
-    template="When was {person} born"
+    template="When was {person} born?"
 )
 
 # OpenAI LLMs
@@ -86,26 +110,31 @@ llm = OpenAI(temperature=0.8)
 chain = LLMChain(llm=llm, prompt=first_input_prompt, verbose=True, output_key='person')
 chain2 = LLMChain(llm=llm, prompt=second_input_prompt, verbose=True, output_key='dob')
 
-parent_chain = SimpleSequentialChain(chain=[chain, chain2], verbose=True)
-
 if input_text:
-    st.write(parent_chain.run(input_text))
+    st.write(chain.run(input_text))
+    st.write(chain2.run(chain.run(input_text)))
 ```
+
+### **Output Section**
+<h4>Asking -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/HzPbbYr/STEP-THREE-1.png" alt="STEP-THREE-1" border="0"></a>
+<h4>Output -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/5kc0nbd/STEP-THREE-2.png" alt="STEP-THREE-2" border="0"></a>
 
 ---
 
-### **Step 4: Switching to SequentialChain**
+## **Step 4: Switching to SequentialChain**
 
-To include intermediate outputs, replace `SimpleSequentialChain` with `SequentialChain`.
+In this step, we use a SequentialChain to process multiple prompts in sequence.
 
 ```python
+# practice.py (Step 4)
 import os
 from constants import openai_key
 from langchain.llms import OpenAI
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
-
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = openai_key
@@ -114,15 +143,16 @@ os.environ["OPENAI_API_KEY"] = openai_key
 st.title('Langchain Demo With OPENAI API')
 input_text = st.text_input("Enter Anything You Want To Ask?")
 
-# Prompt Templates
+# Prompt Template for celebrity search
 first_input_prompt = PromptTemplate(
     input_variables=['name'],
     template="Tell me about celebrity {name}"
 )
 
+# Prompt Template for birth date
 second_input_prompt = PromptTemplate(
     input_variables=['person'],
-    template="When was {person} born"
+    template="When was {person} born?"
 )
 
 # OpenAI LLMs
@@ -136,20 +166,24 @@ if input_text:
     st.write(parent_chain({'name': input_text}))
 ```
 
+### **Output Section**
+<h4>Output -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/gZwhb91/STEP-FOUR-1.png" alt="STEP-FOUR-1" border="0"></a>
+
 ---
 
-### **Step 5: Adding a Third Prompt Template**
+## **Step 5: Adding a Third Prompt Template**
 
-Add a third prompt template to the chain to extract major world events around the celebrity's birth year.
+We add a third template to include even more detailed information.
 
 ```python
+# practice.py (Step 5)
 import os
 from constants import openai_key
 from langchain.llms import OpenAI
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
-
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = openai_key
@@ -158,20 +192,22 @@ os.environ["OPENAI_API_KEY"] = openai_key
 st.title('Langchain Demo With OPENAI API')
 input_text = st.text_input("Enter Anything You Want To Ask?")
 
-# Prompt Templates
+# Prompt Template for celebrity search
 first_input_prompt = PromptTemplate(
     input_variables=['name'],
     template="Tell me about celebrity {name}"
 )
 
+# Prompt Template for birth date
 second_input_prompt = PromptTemplate(
     input_variables=['person'],
-    template="When was {person} born"
+    template="When was {person} born?"
 )
 
+# Prompt Template for major events
 third_input_prompt = PromptTemplate(
     input_variables=['dob'],
-    template="Mention 5 major events happened around {dob} in the world"
+    template="Mention 5 major events that happened around {dob} in the world."
 )
 
 # OpenAI LLMs
@@ -186,13 +222,20 @@ if input_text:
     st.write(parent_chain({'name': input_text}))
 ```
 
+### **Output Section**
+<h4>Asking -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/7493016/STEP-FIVE-1.png" alt="STEP-FIVE-1" border="0"></a>
+<h4>Output -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/Byn6TVg/STEP-FIVE-2.png" alt="STEP-FIVE-2" border="0"></a>
+
 ---
 
-### **Step 6: Adding Memory Buffers**
+## **Step 6: Adding Memory Buffers**
 
-Finally, implement memory buffers to retain conversation history.
+Now we’ll add memory buffers to retain the conversation context between each step.
 
 ```python
+# practice.py (Step 6)
 import os
 from constants import openai_key
 from langchain.llms import OpenAI
@@ -200,7 +243,6 @@ from langchain import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 from langchain.memory import ConversationBufferMemory
-
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = openai_key
@@ -209,25 +251,27 @@ os.environ["OPENAI_API_KEY"] = openai_key
 st.title('Langchain Demo With OPENAI API')
 input_text = st.text_input("Enter Anything You Want To Ask?")
 
-# Prompt Templates
+# Prompt Template for celebrity search
 first_input_prompt = PromptTemplate(
     input_variables=['name'],
     template="Tell me about celebrity {name}"
 )
 
+# Prompt Template for birth date
 second_input_prompt = PromptTemplate(
     input_variables=['person'],
-    template="When was {person} born"
+    template="When was {person} born?"
 )
 
+# Prompt Template for major events
 third_input_prompt = PromptTemplate(
     input_variables=['dob'],
-    template="Mention 5 major events happened around {dob} in the world"
+    template="Mention 5 major events that happened around {dob} in the world."
 )
 
 # Memory Buffers
 person_memory = ConversationBufferMemory(input_key='name', memory_key='chat_history')
-dob_memory = ConversationBufferMemory(input_key='person', memory_key='chat_history')
+dob_memory = ConversationBufferMemory(input_key='person', memory_key='dob_history')
 descr_memory = ConversationBufferMemory(input_key='dob', memory_key='description_history')
 
 # OpenAI LLMs
@@ -241,28 +285,33 @@ parent_chain = SequentialChain(chain=[chain, chain2, chain3], input_variable=['n
 if input_text:
     st.write(parent_chain({'name': input_text}))
 
-    with st.expander('Person Name'):
+    # Expander for memory history
+    with st.expander('Person History'):
         st.info(person_memory.buffer)
 
-    with st.expander('Major Events'):
+    with st.expander('Major Events History'):
         st.info(descr_memory.buffer)
 ```
+
+### **Output Section**
+<h4>Output -</h4>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/Fwbpjjg/STEP-SIX-1.png" alt="STEP-SIX-1" border="0"></a>
 
 ---
 
 ## **Features**
 
-- **Prompt Templates**: Design dynamic prompts for specific tasks.
-- **Sequential Chains**: Process tasks sequentially with intermediate outputs.
-- **Memory Buffers**: Retain context and enhance conversational applications.
+- **Prompt Templates**: Create dynamic and customized prompts for different tasks.
+- **Sequential Chains**: Process multiple prompts in sequence for complex workflows.
+- **Memory Buffers**: Retain context to enhance the user experience in interactive applications.
 
 ---
 
 ## **Notes**
 
 - Remember to replace `openai_key` in `constants.py` with your OpenAI API key.
-- Customize prompts to suit your application needs.
-- Experiment with different chain configurations to unlock more complex workflows.
+- You can adjust the prompt templates based on your needs.
+- The memory buffers allow you to track and utilize prior interactions for more meaningful results.
 
 ---
 
