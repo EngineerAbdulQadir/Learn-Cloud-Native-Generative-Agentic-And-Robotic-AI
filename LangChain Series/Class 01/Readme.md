@@ -83,6 +83,9 @@ Welcome to the first class of the **Langchain Series**! In this session, we set 
 
 ---
 
+### Video
+<a href="https://youtu.be/nqiSiVYsiAE?si=nEx1tJlOLYc-Qwfc" target="_blank" >LangChain Series - Class 01</a>
+
 ### Features
 - **Interactive Input**: Users can type a query into the input box.
 - **LLM Response**: The application uses Langchain and OpenAI's API to generate a response based on the input.
