@@ -160,7 +160,12 @@ llm = OpenAI(temperature=0.8)
 chain = LLMChain(llm=llm, prompt=first_input_prompt, verbose=True, output_key='person')
 chain2 = LLMChain(llm=llm, prompt=second_input_prompt, verbose=True, output_key='dob')
 
-parent_chain = SequentialChain(chain=[chain, chain2], input_variable=['name'], output_variables=['person', 'dob'], verbose=True)
+parent_chain = SequentialChain(
+    chains=[chain, chain2],
+    input_variables=['name'],
+    output_variables=['person', 'dob'],
+    verbose=True
+)
 
 if input_text:
     st.write(parent_chain({'name': input_text}))
@@ -216,7 +221,12 @@ chain = LLMChain(llm=llm, prompt=first_input_prompt, verbose=True, output_key='p
 chain2 = LLMChain(llm=llm, prompt=second_input_prompt, verbose=True, output_key='dob')
 chain3 = LLMChain(llm=llm, prompt=third_input_prompt, verbose=True, output_key='description')
 
-parent_chain = SequentialChain(chain=[chain, chain2, chain3], input_variable=['name'], output_variables=['person', 'dob', 'description'], verbose=True)
+parent_chain = SequentialChain(
+    chains=[chain, chain2, chain3],
+    input_variables=['name'],
+    output_variables=['person', 'dob', 'description'],
+    verbose=True
+)
 
 if input_text:
     st.write(parent_chain({'name': input_text}))
@@ -248,7 +258,7 @@ import streamlit as st
 os.environ["OPENAI_API_KEY"] = openai_key
 
 # Streamlit framework
-st.title('Langchain Demo With OPENAI API')
+st.title('Celebrity Search Application')
 input_text = st.text_input("Enter Anything You Want To Ask?")
 
 # Prompt Template for celebrity search
@@ -280,7 +290,13 @@ chain = LLMChain(llm=llm, prompt=first_input_prompt, verbose=True, output_key='p
 chain2 = LLMChain(llm=llm, prompt=second_input_prompt, verbose=True, output_key='dob', memory=dob_memory)
 chain3 = LLMChain(llm=llm, prompt=third_input_prompt, verbose=True, output_key='description', memory=descr_memory)
 
-parent_chain = SequentialChain(chain=[chain, chain2, chain3], input_variable=['name'], output_variables=['person', 'dob', 'description'], verbose=True)
+# Sequential chain
+parent_chain = SequentialChain(
+    chains=[chain, chain2, chain3],
+    input_variables=['name'],
+    output_variables=['person', 'dob', 'description'],
+    verbose=True
+)
 
 if input_text:
     st.write(parent_chain({'name': input_text}))
@@ -291,6 +307,7 @@ if input_text:
 
     with st.expander('Major Events History'):
         st.info(descr_memory.buffer)
+
 ```
 
 ### **Output Section**
