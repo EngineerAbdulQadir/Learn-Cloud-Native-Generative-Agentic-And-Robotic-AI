@@ -85,6 +85,8 @@ from constants import openai_key
 from langchain.llms import OpenAI
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
+from langchain.chains import SimpleSequentialChain
+
 import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = openai_key
