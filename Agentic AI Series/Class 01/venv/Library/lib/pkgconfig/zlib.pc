@@ -1,0 +1,13 @@
+prefix=D:/AQ/Desktop/Agentic AI/venv/Library
+exec_prefix=D:/AQ/Desktop/Agentic AI/venv/Library
+libdir=D:/AQ/Desktop/Agentic AI/venv/Library/lib
+sharedlibdir=D:/AQ/Desktop/Agentic AI/venv/Library/lib
+includedir=D:/AQ/Desktop/Agentic AI/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
