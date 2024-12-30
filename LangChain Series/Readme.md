@@ -49,6 +49,6 @@ print(response)
 
 ## Contributions
 
-Contributions to the series are always welcome! Feel free to open an issue or submit a pull request if you find any improvements or want to add examples to the series.
+Contributions are always welcome! If you have suggestions, improvements, or additional examples, feel free to open an issue or submit a pull request.
 
 ---
