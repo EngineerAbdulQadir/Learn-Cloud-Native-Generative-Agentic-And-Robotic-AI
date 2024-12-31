@@ -1,6 +1,4 @@
-# **Learn Cloud Native Generative, Agentic, and Robotic AI Engineering**
-
-## **01. Setup Your Mindset and Life for Success**
+## **00. Setup Your Mindset and Life for Success**
 
 Before you dive into the technical journey of mastering AI engineering and achieving your ultimate goal of becoming a multimillionaire, it's essential to set up the right habits, mindset, and priorities.
 
