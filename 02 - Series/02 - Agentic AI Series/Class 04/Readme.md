@@ -89,14 +89,20 @@ This project demonstrates the process of building a Retrieval-Augmented Generati
 #### 11. **Test in Playground**  
    - Open the Playground.  
    - Test the system with user prompts. For example:  
-     ```plaintext
-     User: Direction to make Som Tum.  
-     <h2>Output</h2>
-     <h4>Running -</h4>
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/9gCQt0q/Running.png" alt="Running" border="0"></a>  
-     ```
+   <h3>For Example</h3>
+     User: Direction to make Som Tum?<br>
+     Agent:<br><br>
+     <a href="https://imgbb.com/"><img src="https://i.ibb.co/xSN1BR8/Output.png" alt="Output" border="0"></a>
+     <br><br>
+     User: How to make Chicken Biryani?<br>
+     Agent:<br><br>
+     <a href="https://imgbb.com/"><img src="https://i.ibb.co/j4vD7vY/User-Prompt-1.png" alt="User-Prompt-1" border="0"></a>
+     <h4>Output</h4>
+     <a href="https://ibb.co/xjh1wY8"><img src="https://i.ibb.co/3N1pVvY/structure.png" alt="structure" border="0"></a><br>
+
 
 ---
+
 
 ### Results  
 
